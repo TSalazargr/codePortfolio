@@ -1,0 +1,26 @@
+from flask import Flask
+
+app = Flask(__name__, static_url_path="/static")
+
+@app.route('/')
+def index():
+  title = "Teresa's portfolio"
+  h1 = "Teresa's portfolio"
+  h2_1 = "Number guesser"
+  text = "This script randomly selects a number between 1 and 100 and then asks you to guess it, giving you tips along the way. Can you guess the number in less than 6 attempts?"
+  link_href = "/numberGuesser.html"
+  link_text = "Check out the number guesser here!"
+  
+  page = ""
+  f = open("template/mainTemplate.html", "r")
+  page = f.read()
+  f.close()
+  page.replace("{title}", title)
+  page.replace("{h1}", h1)
+  page.replace("{h2_1}", h2_1)
+  page.replace("{text}", text)
+  page.replace("{link_href}", link_href)
+  page.replace("{link_text}", link_text)
+  return page
+
+  app.run(host='0.0.0.0', port=81)
