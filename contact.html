@@ -10,15 +10,15 @@
         <main>
            <form method = "post" action = "/process">
               <label for="nameContact">Name:</label>
-              <input id="nameContact" type="Text" name="nameContactForm"><br>
+              <input id="nameContact" type="Text" name="nameContactForm" required><br>
               <label for="emailContact">Email:</label>
-              <input id="emailContact" type="email" name="emailContactForm"><br>
+              <input id="emailContact" type="email" name="emailContactForm" required><br>
               <label id="contactContact">Would you like to be contacted?</label>
-              <select id="contactContact">
+              <select id="contactContact" required>
                <option value="yesContactForm">Yes</option>
                <option value="noContactForm">No</option>
               </select><br>
-              <label for="messageContact">Message:</label><br>
+              <label for="messageContact" required>Message:</label><br>
               <textarea id="messageContact" rows = "5" cols = "60" name = "descriptionContactForm">
               Enter details here...
               </textarea><br>
