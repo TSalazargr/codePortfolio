@@ -23,4 +23,11 @@ def index():
   page.replace("{link_text}", link_text)
   return page
 
-  app.run(host='0.0.0.0', port=81)
+@app.route('/contact')
+def contact():
+  page = ""
+  f = open("template/contact.html", "r")
+  page = f.read()
+  f.close()
+
+app.run(host='0.0.0.0', port=81)
